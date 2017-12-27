@@ -142,9 +142,7 @@ class BBoxUtility(object):
         best_iou_idx = best_iou_idx[best_iou_mask]
         assign_num = len(best_iou_idx)
         encoded_boxes = encoded_boxes[:, best_iou_mask, :]
-        assignment[:, :4][best_iou_mask] = encoded_boxes[best_iou_idx,
-                                                         np.arange(assign_num),
-                                                         :4]
+        assignment[:, :4][best_iou_mask] = encoded_boxes[best_iou_idx, np.arange(assign_num), :4]
         assignment[:, 4][best_iou_mask] = 0
         assignment[:, 5:-8][best_iou_mask] = boxes[best_iou_idx, 4:]
         assignment[:, -8][best_iou_mask] = 1
