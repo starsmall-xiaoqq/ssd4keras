@@ -93,9 +93,8 @@ def create_prior_box():
 
 if __name__ == "__main__":
     boxes_paras = create_prior_box()
-
-    priors = pickle.load(open('prior_boxes_ssd300.pkl', 'rb'))
-    print(priors.shape)
+    #priors = pickle.load(open('prior_boxes_ssd300.pkl', 'rb'))
+    #print(priors.shape)
     print(boxes_paras.shape)
     with open('prior_boxes_ssd512.pkl', 'wb') as f:
         pickle.dump(boxes_paras, f, protocol=2)
